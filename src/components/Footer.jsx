@@ -6,11 +6,13 @@ import {
   Room,
   Twitter,
   YouTube,
-} from '@material-ui/icons';
-import styled from 'styled-components';
+} from "@material-ui/icons";
+import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -45,6 +47,7 @@ const SocialIcon = styled.div`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#eee" })}
 `;
 
 const Title = styled.h3`
@@ -67,6 +70,7 @@ const ListItem = styled.li`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 
 const ContactItem = styled.div`
@@ -122,15 +126,15 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{ marginRight: '10px' }} /> Tashkent, Yunusobod district,
+          <Room style={{ marginRight: "10px" }} /> Tashkent, Yunusobod district,
           Amir Temur avenue 12, 21
         </ContactItem>
         <ContactItem>
-          <Phone style={{ marginRight: '10px' }} />
+          <Phone style={{ marginRight: "10px" }} />
           +99899 720 95 06
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{ marginRight: '10px' }} />
+          <MailOutline style={{ marginRight: "10px" }} />
           sardorabduxoliqov@mail.ru
         </ContactItem>
         <Payment src="https://i.iib.co/Qfvn4z6/payment.png" />
