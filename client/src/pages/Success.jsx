@@ -8,9 +8,11 @@ const Success = () => {
   //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
   const data = location.state.stripeData;
   const cart = location.state.cart;
+  console.log(location.state.cart);
+  console.log(location.state.stripeData);
   const currentUser = useSelector((state) => state.user.currentUser);
+  console.log(currentUser);
   const [orderId, setOrderId] = useState(null);
-
   useEffect(() => {
     const createOrder = async () => {
       try {
