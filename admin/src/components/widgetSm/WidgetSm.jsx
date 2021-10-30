@@ -17,7 +17,7 @@ export default function WidgetSm() {
             <span className="widgetSmUserTitle">Software engineer</span>
           </div>
           <button className="widgetSmButton">
-            <Visibility />
+            <Visibility className="widgetSmIcon" />
             Display
           </button>
         </li>
@@ -32,7 +32,7 @@ export default function WidgetSm() {
             <span className="widgetSmUserTitle">Software engineer</span>
           </div>
           <button className="widgetSmButton">
-            <Visibility />
+            <Visibility className="widgetSmIcon" />
             Display
           </button>
         </li>
@@ -47,7 +47,7 @@ export default function WidgetSm() {
             <span className="widgetSmUserTitle">Software engineer</span>
           </div>
           <button className="widgetSmButton">
-            <Visibility />
+            <Visibility className="widgetSmIcon" />
             Display
           </button>
         </li>
