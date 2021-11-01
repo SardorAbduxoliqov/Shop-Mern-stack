@@ -16,7 +16,7 @@ export default function UserList() {
     {
       field: "user",
       headerName: "User",
-      width: 200, 
+      width: 200,  
       renderCell: (params) => {
         return (
           <div className="userListUser">

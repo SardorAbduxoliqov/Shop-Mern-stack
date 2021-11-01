@@ -52,7 +52,7 @@ export default function ProductList() {
               className="productListDelete"
               onClick={() => handleDelete(params.row._id)}
             />
-          </>
+          </> 
         );
       },
     },
