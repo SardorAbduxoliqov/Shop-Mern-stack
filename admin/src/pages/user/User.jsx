@@ -6,10 +6,17 @@ import {
   PhoneAndroid,
   Publish,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 import "./user.css";
 
 export default function User() {
+  const location = useLocation();
+  const userId = location.pathname.split("/")[2];
+  const user = useSelector((state) =>
+    state.user.users.find((user) => user._id === userId)
+  );
+
   return (
     <div className="user">
       <div className="userTitleContainer">
@@ -22,13 +29,15 @@ export default function User() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src={
+                user.img ||
+                "https://i0.wp.com/crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif?fit=150%2C150&ssl=1"
+              }
               alt=""
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">Sardor Abduxoliqov</span>
-              <span className="userShowUserTitle">Software Engineer</span>
+              <span className="userShowUsername">{user.username}</span>
             </div>
           </div>
           <div className="userShowBottom">

@@ -15,7 +15,7 @@ export default function ProductList() {
   }, [dispatch]);
 
   const handleDelete = (id) => {
-    deleteProducts(id, dispatch); 
+    deleteProducts(id, dispatch);
   };
   const columns = [
     { field: "_id", headerName: "ID", width: 220 },
@@ -52,7 +52,7 @@ export default function ProductList() {
               className="productListDelete"
               onClick={() => handleDelete(params.row._id)}
             />
-          </> 
+          </>
         );
       },
     },
