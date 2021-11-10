@@ -137,7 +137,8 @@ const Footer = () => {
           <MailOutline style={{ marginRight: "10px" }} />
           sardorabduxoliqov@mail.ru
         </ContactItem>
-        <Payment src="https://i.iib.co/Qfvn4z6/payment.png" />
+        <Payment src="https://mediapark.uz/themes/mp_redesign/images/visa.svg" />
+        <Payment src="https://mediapark.uz/themes/mp_redesign/images/uzcard.svg" />
       </Right>
     </Container>
   );

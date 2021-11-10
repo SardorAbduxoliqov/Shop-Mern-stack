@@ -114,7 +114,10 @@ export default function User() {
               <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1192601/pexels-photo-1192601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  src={
+                    user.img ||
+                    "https://i0.wp.com/crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif?fit=150%2C150&ssl=1"
+                  }
                   alt=""
                 />
                 <label htmlFor="file">

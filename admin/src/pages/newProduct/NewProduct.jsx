@@ -14,6 +14,8 @@ export default function NewProduct() {
   const [input, setInput] = useState({});
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -23,6 +25,12 @@ export default function NewProduct() {
   };
   const handleCat = (e) => {
     setCat(e.target.value.split(","));
+  };
+  const handleColor = (e) => {
+    setColor(e.target.value.split(","));
+  };
+  const handleSize = (e) => {
+    setSize(e.target.value.split(","));
   };
 
   const handleClick = (e) => {
@@ -61,7 +69,7 @@ export default function NewProduct() {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const product = { ...input, img: downloadURL, categories: cat };
+          const product = { ...input, img: downloadURL, categories: cat, size, color };
           addProducts(product, dispatch);
         });
       }
@@ -75,7 +83,7 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Image</label>
           <input
-          name="name"
+            name="name"
             type="file"
             id="file"
             onChange={(e) => setFile(e.target.files[0])}
@@ -111,6 +119,14 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Categories</label>
           <input type="text" placeholder="jeans, skirts" onChange={handleCat} />
+        </div>
+        <div className="addProductItem">
+          <label>Colors</label>
+          <input type="text" placeholder="green, yellow" onChange={handleColor} />
+        </div>
+        <div className="addProductItem">
+          <label>Size</label>
+          <input type="text" placeholder="L, S,  M" onChange={handleSize} />
         </div>
         <div className="addProductItem">
           <label>Stock</label>
